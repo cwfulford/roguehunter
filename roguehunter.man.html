@@ -1,0 +1,102 @@
+<h2 id="heading1">NAME</h2>
+<p class="indent">
+<b><a href="./scripts.php?script=roguehunter">roguehunter</a></b>
+- identify and terminate rogue processes 
+</p>
+<h2 id="heading2">SYNOPSIS</h2>
+<p class="indent">
+<b><a href="./scripts.php?script=roguehunter">roguehunter</a></b>
+[
+<b>-c </b>
+<i>&lt;config_file&gt;</i>
+] [
+<b>-d</b>
+] [
+<b>-v</b>
+]
+</p>
+<h2 id="heading3">AVAILABILITY</h2>
+<p class="indent">
+<b><a href="./scripts.php?script=roguehunter">roguehunter</a></b>
+is a Bourne shell script which should work equally well on all versions of UNIX,
+Linux and even bloody UnixWare.
+</p>
+<h2 id="heading4">DESCRIPTION</h2>
+<p class="indent">
+</p>
+<p class="indent">
+The 
+<b><a href="./scripts.php?script=roguehunter">roguehunter</a></b>
+is at present server specific. Tests to identify rogue processes are hard
+coded into the script.
+</p>
+<p class="indent">
+The script attempts kill process with SIGHUP in order allow a clean termination.No attempt is made to use SIGKILL if termination fails.
+</p>
+<p class="indent">
+A terse record of the attempted kills are maintained in the log file.
+<b><a href="./scripts.php?script=roguehunter">roguehunter</a></b>
+</p>
+<h2 id="heading5">OPTIONS</h2>
+<p class="indent">
+</p>
+<p class="indent">
+<b>-c</b>&nbsp;&nbsp;&nbsp;
+<i>&lt;configuration_file&gt;</i>
+</p>
+<p class="indent">
+The configuration file is at present unused. 
+</p>
+<p class="indent">
+<b>-d</b>&nbsp;&nbsp;&nbsp;
+</p>
+<p class="indent">
+The debug mode echos all actions to standard error. 
+</p>
+<p class="indent">
+</p>
+<p class="indent">
+<b>-v</b>&nbsp;&nbsp;&nbsp;
+</p>
+<p class="indent">
+Verbose mode, the script will run with the 
+<b>-x</b>&nbsp;&nbsp;&nbsp;
+option set.
+</p>
+<h2 id="heading6">EXAMPLES</h2>
+<p class="indent">
+</p>
+<p class="indent">
+</p><div class="cmdline">
+<pre>
+	roguehunter
+</pre></div>
+<p class="indent">
+</p>
+<p class="indent">
+Identify rogue processes on the current host using the criteria hard coded
+in the script and terminate them.
+</p>
+<p class="indent">
+</p><div class="cmdline">
+<pre>
+	roguehunter -d
+</pre></div>
+<p class="indent">
+</p>
+<p class="indent">
+As above but echo each line to standard error.
+</p>
+<h2 id="heading7">FILES</h2>
+<p class="indent">
+<i><a href="./scripts.php?script=roguehunter.cf">roguehunter.cf</a></i>.
+</p>
+<h2 id="heading8">BUGS</h2>
+<p class="indent">
+The script has very little input error checking. 
+</p>
+<h2 id="heading10">AUTHOR</h2>
+<p class="indent">
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)709 229 5385.
+</p>
+	
