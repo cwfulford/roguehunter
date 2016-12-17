@@ -74,7 +74,7 @@ option set.
 <p class="indent">
 </p>
 <p class="indent">
-Identify rogue processes on the current host using the criteria hard coded
+Identify rogue processes (cpu hogs) on the current host using the criteria hard coded
 in the script and terminate them.
 </p>
 <p class="indent">
@@ -94,6 +94,25 @@ As above but echo each line to standard error.
 <h2 id="heading8">BUGS</h2>
 <p class="indent">
 The script has very little input error checking. 
+.SH HISTORY
+The script was created to deal with extreme process hogs created by 
+<i>Mega</i>
+on a 
+<i>Caldera Open Unix</i>
+ host. Access to the system is achieved through
+terminal emulation from PCs. I suspect that the PCs are shutdown without
+ending the telnet/ssh session and that as a consequence SIGHUP is never
+sent to host. When the telnet session is broken the login process is 
+attached to 
+<i>init</i>
+ and the application process smn12 becomes a process
+hog. The script therefore is essentially concerned with processor hogs 
+identified as smn12 and the associated 
+<b>ksh</b>
+ login although it could
+be easily modified to use a config script which identified other target
+names. Other processes that are identified as a potential problem are
+added to the log files for further consideration.
 </p>
 <h2 id="heading10">AUTHOR</h2>
 <p class="indent">
