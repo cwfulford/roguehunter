@@ -1,20 +1,20 @@
 #!/bin/sh
-# $Id: roguehunter,v 1.4 2016/12/17 16:31:47 fulford Exp $
+# $Id: roguehunter,v 1.5 2016/12/17 16:53:28 fulford Exp fulford $
 # $Source: /src/bfl/usr/local/etc/RCS/roguehunter,v $
-# $Revision: 1.4 $
+# $Revision: 1.5 $
 # Author C W Fulford.
 # Copyright 2016 (c) C W Fulford.
 # Licensed for public use under the LGPL, .
 # For assistance contact fulford@fulford.net 0793 572 8612
 ########################################################################
 cmd=`basename $0`
-ver=`echo "$Id: roguehunter,v 1.4 2016/12/17 16:31:47 fulford Exp $"|awk '{print $3,$4,$5}'`
+ver=`echo "$Id: roguehunter,v 1.5 2016/12/17 16:53:28 fulford Exp fulford $"|awk '{print $3,$4,$5}'`
 syntax="$cmd [-c <configfile>] [-d] [-v]|-V"
 while [ $# -gt 0 ] ;do
 	case $1 in 
 		-d) set -x;debug=0;shift;;
 		-v) verbose=:;shift;;
-		-V) echo "$cmd $Revision: 1.4 $ $Date: 2016/12/17 16:31:47 $"|awk '{print $1,$3,$6}';exit;;  
+		-V) echo "$cmd $Revision: 1.5 $ $Date: 2016/12/17 16:53:28 $"|awk '{print $1,$3,$6}';exit;;  
 	esac
 done
 log=/var/log/$cmd`date +%w`
@@ -23,7 +23,7 @@ hour=`date +%H`
 [ $hour -lt 1 ] && >$log 
 rogues=/tmp/$cmd$$ ;touch $rogues
 
-# NB can't use -ef as Unix ware has irregular number of fields
+# NB can't use -ef as UnixWare has irregular number of fields
 ps -e |
 awk 'NR > 1 {
         split($5,a,":")
