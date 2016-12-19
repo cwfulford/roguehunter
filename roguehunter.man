@@ -69,8 +69,8 @@ The script was created to deal with extreme process hogs created by
 .I Mega
 on a \fICaldera Open Unix\fR host. Access to the system is achieved through
 terminal emulation from PCs. I suspect that the PCs are shutdown without
-ending the telnet/ssh session and that as a consequence SIGHUP is never
-sent to host. When the telnet session is broken the login process is 
+ending the telnet/ssh session and that as a consequence, SIGHUP is never
+sent to the host. When the telnet session is broken the login process is 
 attached to \fIinit\fR and the application process smn12 becomes a process
 hog. The script therefore is essentially concerned with processor hogs 
 identified as smn12 and the associated \fBksh\fR login although it could
