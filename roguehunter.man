@@ -78,4 +78,4 @@ be easily modified to use a config script which identified other target
 names. Other processes that are identified as a potential problem are
 added to the log files for further consideration.
 .SH AUTHOR
-Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)793 572 *612
+Clifford W Fulford, City Linux. Contact fulford@fulford.net or +44 (0)793 572 8612
