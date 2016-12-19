@@ -1,4 +1,4 @@
-.TH RHOST 8l "1 October r1.5
+.TH ROGUEHUNTER 8l "17 December r1.5
 .SH NAME
 .B roguehunter
 - identify and terminate rogue processes 
