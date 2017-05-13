@@ -1,4 +1,4 @@
-.TH ROGUEHUNTER 8l "17 December r1.6
+.TH ROGUEHUNTER 8l "17 December r1.8
 .SH NAME
 .B roguehunter
 - identify and terminate rogue processes 
@@ -9,6 +9,8 @@
 .I <config_file>
 ] [
 .B -d
+] [
+.B -m #
 ] [
 .B -v
 ]
@@ -38,6 +40,14 @@ The configuration file is at present unused.
 .LP
 The debug mode echos all actions to standard error. 
 .LP
+.TP 5
+.B -m #
+Set the maximum time in minutes that a process may occupy the CPU before it
+catches the attention of 
+.I roguehunter .
+In the abscence of a 
+.B -m
+option the default maximum time is 50.
 .TP 5
 .B -v
 .LP

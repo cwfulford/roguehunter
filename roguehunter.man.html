@@ -12,6 +12,8 @@
 ] [
 <b>-d</b>
 ] [
+<b>-m #</b>
+] [
 <b>-v</b>
 ]
 </p>
@@ -54,6 +56,15 @@ The configuration file is at present unused.
 The debug mode echos all actions to standard error. 
 </p>
 <p class="indent">
+</p>
+<p class="indent">
+<b>-m #</b>
+Set the maximum time in minutes that a process may occupy the CPU before it
+catches the attention of 
+<i><a href="./scripts.php?script=roguehunter">roguehunter</a> .</i>
+In the abscence of a 
+<b>-m</b>&nbsp;&nbsp;&nbsp;
+option the default maximum time is 50.
 </p>
 <p class="indent">
 <b>-v</b>&nbsp;&nbsp;&nbsp;
