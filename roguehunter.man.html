@@ -37,7 +37,7 @@ The script attempts to kill processes with SIGHUP in order allow a clean termina
 </p>
 <p class="indent">
 A terse record of the attempted kills are maintained in the log file.
-<b><a href="./scripts.php?script=roguehunter">roguehunter</a></b>
+<b>/var/log/<a href="./scripts.php?script=roguehunter">roguehunter</a>&lt;#&gt;.</b>
 </p>
 <h2 id="heading5">OPTIONS</h2>
 <p class="indent">
@@ -51,8 +51,6 @@ The configuration file is at present unused.
 </p>
 <p class="indent">
 <b>-d</b>&nbsp;&nbsp;&nbsp;
-</p>
-<p class="indent">
 The debug mode echos all actions to standard error. 
 </p>
 <p class="indent">
@@ -61,15 +59,13 @@ The debug mode echos all actions to standard error.
 <b>-m #</b>
 Set the maximum time in minutes that a process may occupy the CPU before it
 catches the attention of 
-<i><a href="./scripts.php?script=roguehunter">roguehunter</a> .</i>
+<i>roguehunter.</i>
 In the abscence of a 
 <b>-m</b>&nbsp;&nbsp;&nbsp;
 option the default maximum time is 50.
 </p>
 <p class="indent">
 <b>-v</b>&nbsp;&nbsp;&nbsp;
-</p>
-<p class="indent">
 Verbose mode, the script will run with the 
 <b>-x</b>&nbsp;&nbsp;&nbsp;
 option set.

@@ -28,7 +28,7 @@ coded into the script.
 The script attempts to kill processes with SIGHUP in order allow a clean termination.No attempt is made to use SIGKILL if termination fails.
 .LP
 A terse record of the attempted kills are maintained in the log file.
-.B roguehunter
+.B /var/log/roguehunter<#>.
 .SH OPTIONS
 .TP 5
 .B -c
@@ -37,20 +37,18 @@ A terse record of the attempted kills are maintained in the log file.
 The configuration file is at present unused. 
 .TP 5
 .B -d
-.LP
 The debug mode echos all actions to standard error. 
 .LP
 .TP 5
 .B -m #
 Set the maximum time in minutes that a process may occupy the CPU before it
 catches the attention of 
-.I roguehunter .
+.I roguehunter.
 In the abscence of a 
 .B -m
 option the default maximum time is 50.
 .TP 5
 .B -v
-.LP
 Verbose mode, the script will run with the 
 .B -x
 option set.
