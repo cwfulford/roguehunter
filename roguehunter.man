@@ -1,4 +1,4 @@
-.TH ROGUEHUNTER 8l "17 December r1.8
+.TH ROGUEHUNTER 8l "17 December r1.9
 .SH NAME
 .B roguehunter
 - identify and terminate rogue processes 
