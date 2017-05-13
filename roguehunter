@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: roguehunter,v 1.8 2017/05/13 10:23:02 fulford Exp fulford $
+# $Id: roguehunter,v 1.8 2017/05/13 10:23:02 fulford Exp $
 # $Source: /src/bfl/usr/local/etc/RCS/roguehunter,v $
 # $Revision: 1.8 $
 # Author C W Fulford.
@@ -8,7 +8,7 @@
 # For assistance contact fulford@fulford.net 0793 572 8612
 ########################################################################
 cmd=`basename $0`
-ver=`echo "$Id: roguehunter,v 1.8 2017/05/13 10:23:02 fulford Exp fulford $"|awk '{print $3,$4,$5}'`
+ver=`echo "$Id: roguehunter,v 1.8 2017/05/13 10:23:02 fulford Exp $"|awk '{print $3,$4,$5}'`
 syntax="$cmd [-c <configfile>] [-d] [-v]|-V"
 while [ $# -gt 0 ] ;do
 	case $1 in 
