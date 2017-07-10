@@ -1,21 +1,21 @@
 #!/bin/sh
-# $Id: roguehunter,v 1.9 2017/05/13 10:56:17 fulford Exp $
+# $Id: roguehunter,v 1.10 2017/07/10 10:50:23 fulford Exp fulford $
 # $Source: /src/bfl/usr/local/etc/RCS/roguehunter,v $
-# $Revision: 1.9 $
+# $Revision: 1.10 $
 # Author C W Fulford.
 # Copyright 2016 (c) C W Fulford.
 # Licensed for public use under the LGPL, .
 # For assistance contact fulford@fulford.net 0793 572 8612
 ########################################################################
 cmd=`basename $0`
-ver=`echo "$Id: roguehunter,v 1.9 2017/05/13 10:56:17 fulford Exp $"|awk '{print $3,$4,$5}'`
+ver=`echo "$Id: roguehunter,v 1.10 2017/07/10 10:50:23 fulford Exp fulford $"|awk '{print $3,$4,$5}'`
 syntax="$cmd [-c <configfile>] [-d] [-v]|-V"
 while [ $# -gt 0 ] ;do
 	case $1 in 
 		-d) set -x;debug=0;shift;;
 		-m) max=$2;shift 2;;
 		-v) verbose=:;shift;;
-		-V) echo "$cmd $Revision: 1.9 $ $Date: 2017/05/13 10:56:17 $"|awk '{print $1,$3,$6}';exit;;  
+		-V) echo "$cmd $Revision: 1.10 $ $Date: 2017/07/10 10:50:23 $"|awk '{print $1,$3,$6}';exit;;  
 	esac
 done
 log=/var/log/$cmd`date +%w`
@@ -43,16 +43,22 @@ if [ $n -gt 0 ];then
 	cat $rogues |
 	while read pid ;do
 	       	ps -ef |
+		# get the parent process if its not init and add to
+		# the rouges list
 		awk '$2 == '$pid' && $3 > 1 {
 			print $3 >>"'$rogues'"
 		}'
 	done
 fi
+[ "$verbose" ] &&{
+	cat $rogues >&2
+}
 cat $rogues | 
 while read pid ;do
+	[ $verbose ] && echo $pid >&2
 	ps -eo "pid ppid comm" |
 	awk '{
-		if($1=='$pid' && (($3 ~ /smn12/)||($2==1 && $2 ~ /\-ksh/))){
+		if($1=='$pid' && (($3 ~ /smn12/)||($2==1 && $3 ~ /ksh/))){
 			printf("%s %i %s ","killing",$1,$3) >>"'$log'"
 			# No time functions available in this awk
 			cmd="/bin/ksh >> '$log'"
